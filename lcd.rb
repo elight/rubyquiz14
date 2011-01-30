@@ -6,15 +6,17 @@ class NumberRenderer
   def initialize(size)
     @size = size
   end
+
+  def horizontal_line
+    print " "
+    self.size.times do
+      print "-"
+    end
+    puts
+  end
 end
 
 class ZeroRenderer < NumberRenderer
-  def horizontal_line
-    print " "
-    self.size.times { print "-" }
-    puts 
-  end
-
   def vertical_lines
     self.size.times do
       print "|"
@@ -51,14 +53,6 @@ class OneRenderer < NumberRenderer
 end
 
 class TwoRenderer < NumberRenderer
-  def horizontal_line
-    print " "
-    self.size.times do
-      print "-"
-    end
-    puts
-  end
-
   def right_edge
     self.size.times do
       (self.size + 1).times { print " " }
