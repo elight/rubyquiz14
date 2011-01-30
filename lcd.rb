@@ -19,31 +19,31 @@ class NumberRenderer
   def horizontal_line
     line = " "
     self.size.times { line << "-" }
-    line << " "
+    line << "  "
   end
 
   def opposing_vertical_lines
     line = "|"
     self.size.times { line << " " }
-    line << "|"
+    line << "| "
   end
 
   def right_edge
     line = ""
     (self.size + 1).times { line << " " }
-    line << "|"
+    line << "| "
   end
 
   def left_edge
     line = "|"
     (self.size + 1).times { line << " " }
-    line
+    line << " "
   end
 
   def blank_line
     line = ""
     (self.size + 2).times { line << " " }
-    line
+    line << " "
   end
 
   def render(digits)
@@ -58,8 +58,7 @@ class NumberRenderer
   end
 
   def render_lcd_line_for(digits, args = {})
-    line = ""
-    digits.each do |digit|
+    line = digits.inject("") do |line, digit|
       render_strategy = self.class.strategy_for(digit)
       line_for_number = self.send(render_strategy.send(args[:for]))
       line << line_for_number

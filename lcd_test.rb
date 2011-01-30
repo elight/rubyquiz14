@@ -5,124 +5,124 @@ require 'lcd'
 
 class LcdTest < MiniTest::Unit::TestCase
     ZERO_SIZE_1 = <<HERE
- - 
-| |
-   
-| |
- - 
+ -  
+| | 
+    
+| | 
+ -  
 HERE
 
     ONE_SIZE_1 = <<HERE
-   
-  |
-   
-  |
-   
+    
+  | 
+    
+  | 
+    
 HERE
     TWO_SIZE_1 = <<HERE
- - 
-  |
- - 
-|  
- - 
+ -  
+  | 
+ -  
+|   
+ -  
 HERE
 
     THREE_SIZE_1 = <<HERE
- - 
-  |
- - 
-  |
- - 
+ -  
+  | 
+ -  
+  | 
+ -  
 HERE
 
     FOUR_SIZE_1 = <<HERE
-   
-| |
- - 
-  |
-   
+    
+| | 
+ -  
+  | 
+    
 HERE
 
     FIVE_SIZE_1 = <<HERE
- - 
-|  
- - 
-  |
- - 
+ -  
+|   
+ -  
+  | 
+ -  
 HERE
 
     SIX_SIZE_1 = <<HERE
- - 
-|  
- - 
-| |
- - 
+ -  
+|   
+ -  
+| | 
+ -  
 HERE
 
     SEVEN_SIZE_1 = <<HERE
- - 
-  |
-   
-  |
-   
+ -  
+  | 
+    
+  | 
+    
 HERE
 
     EIGHT_SIZE_1 = <<HERE
- - 
-| |
- - 
-| |
- - 
+ -  
+| | 
+ -  
+| | 
+ -  
 HERE
 
     NINE_SIZE_1 = <<HERE
- - 
-| |
- - 
-  |
- - 
+ -  
+| | 
+ -  
+  | 
+ -  
 HERE
 
     ZERO_SIZE_2 = <<HERE
- -- 
-|  |
-|  |
-    
-|  |
-|  |
- -- 
+ --  
+|  | 
+|  | 
+     
+|  | 
+|  | 
+ --  
 HERE
 
     ZERO_SIZE_3 = <<HERE
- --- 
-|   |
-|   |
-|   |
-     
-|   |
-|   |
-|   |
- --- 
+ ---  
+|   | 
+|   | 
+|   | 
+      
+|   | 
+|   | 
+|   | 
+ ---  
 HERE
 
     ONE_SIZE_2 = <<HERE
-    
-   |
-   |
-    
-   |
-   |
-    
+     
+   | 
+   | 
+     
+   | 
+   | 
+     
 HERE
 
     TWO_SIZE_2 = <<HERE
- -- 
-   |
-   |
- -- 
-|   
-|   
- -- 
+ --  
+   | 
+   | 
+ --  
+|    
+|    
+ --  
 HERE
   
   NUMBERS_MAPPED_TO_SIZE_2_LCDS = {
@@ -166,11 +166,11 @@ HERE
   def test_can_print_multiple_numbers_in_one_lcd
     out = `./lcd.rb -s 1 012`
     expected = <<HERE
- -     - 
-| |  |  |
-       - 
-| |  ||  
- -     - 
+ -       -  
+| |   |   | 
+         -  
+| |   | |   
+ -       -  
 HERE
     assert_equal expected, out
   end
