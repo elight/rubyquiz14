@@ -5,132 +5,124 @@ require 'lcd'
 
 class LcdTest < MiniTest::Unit::TestCase
     ZERO_SIZE_1 = <<HERE
- -
+ - 
 | |
-
+   
 | |
- -
+ - 
 HERE
 
     ONE_SIZE_1 = <<HERE
-
+   
   |
-
+   
   |
-
+   
 HERE
     TWO_SIZE_1 = <<HERE
- -
+ - 
   |
- -
-|
- -
+ - 
+|  
+ - 
 HERE
 
     THREE_SIZE_1 = <<HERE
- -
+ - 
   |
- -
+ - 
   |
- -
+ - 
 HERE
 
     FOUR_SIZE_1 = <<HERE
-
+   
 | |
- -
+ - 
   |
-
+   
 HERE
 
     FIVE_SIZE_1 = <<HERE
- -
-|
- -
+ - 
+|  
+ - 
   |
- -
+ - 
 HERE
 
     SIX_SIZE_1 = <<HERE
- -
-|
- -
+ - 
+|  
+ - 
 | |
- -
+ - 
 HERE
 
     SEVEN_SIZE_1 = <<HERE
- -
+ - 
   |
-
+   
   |
-
+   
 HERE
 
     EIGHT_SIZE_1 = <<HERE
- -
+ - 
 | |
- -
+ - 
 | |
- -
+ - 
 HERE
 
     NINE_SIZE_1 = <<HERE
- -
+ - 
 | |
- -
+ - 
   |
- -
+ - 
 HERE
 
     ZERO_SIZE_2 = <<HERE
- --
+ -- 
 |  |
 |  |
-
+    
 |  |
 |  |
- --
+ -- 
 HERE
 
     ZERO_SIZE_3 = <<HERE
- ---
+ --- 
 |   |
 |   |
 |   |
-
+     
 |   |
 |   |
 |   |
- ---
+ --- 
 HERE
 
     ONE_SIZE_2 = <<HERE
-
+    
    |
    |
-
+    
    |
    |
-
-HERE
-
-    TWO_SIZE_1 = <<HERE
- -
-  |
- -
-|
- -
+    
 HERE
 
     TWO_SIZE_2 = <<HERE
- --
+ -- 
    |
    |
- --
-|
-|
- --
+ -- 
+|   
+|   
+ -- 
 HERE
   
   NUMBERS_MAPPED_TO_SIZE_2_LCDS = {
@@ -171,6 +163,18 @@ HERE
     assert_equal ZERO_SIZE_3, out
   end
 
+  def test_can_print_multiple_numbers_in_one_lcd
+    out = `./lcd.rb -s 1 012`
+    expected = <<HERE
+ -     - 
+| |  |  |
+       - 
+| |  ||  
+ -     - 
+HERE
+    assert_equal expected, out
+  end
+
   def test_parse_cmdline_with_0
     lcd = Lcdizer.new
     @expected = 0
@@ -178,7 +182,7 @@ HERE
 
     lcd.parse_cmdline
 
-    assert_equal @expected, lcd.digit
+    assert_equal @expected, lcd.digits.first
   end
 
   def test_parse_cmdline_with_a_size_supplied_correctly_parses_the_digit
@@ -190,7 +194,7 @@ HERE
 
     lcd.parse_cmdline
 
-    assert_equal @expected, lcd.digit
+    assert_equal @expected, lcd.digits.first
   end
 
   def test_parse_cmdline_with_a_size_supplied_correctly_parses_the_size
