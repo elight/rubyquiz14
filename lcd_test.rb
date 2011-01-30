@@ -51,16 +51,36 @@ HERE
    |
 
 HERE
-  
-    NUMBERS_MAPPED_TO_SIZE_2_LCDS = {
-      0 => ZERO_SIZE_2,
-      1 => ONE_SIZE_2
-    }
 
-    NUMBERS_MAPPED_TO_SIZE_1_LCDS = {
-      0 => ZERO_SIZE_1,
-      1 => ONE_SIZE_1
-    }
+    TWO_SIZE_1 = <<HERE
+ -
+  |
+ -
+|
+ -
+HERE
+
+    TWO_SIZE_2 = <<HERE
+ --
+   |
+   |
+ --
+|
+|
+ --
+HERE
+  
+  NUMBERS_MAPPED_TO_SIZE_2_LCDS = {
+    0 => ZERO_SIZE_2,
+    1 => ONE_SIZE_2,
+    2 => TWO_SIZE_2
+  }
+
+  NUMBERS_MAPPED_TO_SIZE_1_LCDS = {
+    0 => ZERO_SIZE_1,
+    1 => ONE_SIZE_1,
+    2 => TWO_SIZE_1
+  }
 
   NUMBERS_MAPPED_TO_SIZE_2_LCDS.each do |number, size_2_lcd|
     define_method("test_#{number}_read_from_argv_renders_correctly_at_default_of_size_2") do
