@@ -72,19 +72,19 @@ define_renderer_for 1 do
 end
 
 define_renderer_for 2 do
-    horizontal_line
-    right_edge
-    horizontal_line
-    left_edge
-    horizontal_line
+  horizontal_line
+  right_edge
+  horizontal_line
+  left_edge
+  horizontal_line
 end
 
 define_renderer_for 3 do
-    horizontal_line
-    right_edge
-    horizontal_line
-    right_edge
-    horizontal_line
+  horizontal_line
+  right_edge
+  horizontal_line
+  right_edge
+  horizontal_line
 end
 
 define_renderer_for 4 do
