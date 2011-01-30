@@ -71,47 +71,47 @@ end
 class RendererStrategy < Struct.new(:top_line, :top, :middle, :btm, :btm_line)
 end
 
-def define_renderer_for(number, &block)
+def define_render_process_for(number, &block)
   NumberRenderer.register(number, RendererStrategy.new(*(block.call)))
 end
 
-define_renderer_for 0 do
+define_render_process_for 0 do
   [:horizontal_line, :opposing_vertical_lines, :blank_line, :opposing_vertical_lines, :horizontal_line]
 end
 
-define_renderer_for 1 do
+define_render_process_for 1 do
   [:blank_line, :right_edge, :blank_line, :right_edge, :blank_line]
 end
 
-define_renderer_for 2 do
+define_render_process_for 2 do
   [:horizontal_line, :right_edge, :horizontal_line, :left_edge, :horizontal_line]
 end
 
-define_renderer_for 3 do
+define_render_process_for 3 do
   [:horizontal_line, :right_edge, :horizontal_line, :right_edge, :horizontal_line]
 end
 
-define_renderer_for 4 do
+define_render_process_for 4 do
   [:blank_line, :opposing_vertical_lines, :horizontal_line, :right_edge, :blank_line]
 end
 
-define_renderer_for 5 do
+define_render_process_for 5 do
   [:horizontal_line, :left_edge, :horizontal_line, :right_edge, :horizontal_line]
 end
 
-define_renderer_for 6 do
+define_render_process_for 6 do
   [:horizontal_line, :left_edge, :horizontal_line, :opposing_vertical_lines, :horizontal_line]
 end
 
-define_renderer_for 7 do
+define_render_process_for 7 do
   [:horizontal_line, :right_edge, :blank_line, :right_edge, :blank_line]
 end
 
-define_renderer_for 8 do
+define_render_process_for 8 do
   [:horizontal_line, :opposing_vertical_lines, :horizontal_line, :opposing_vertical_lines, :horizontal_line]
 end
 
-define_renderer_for 9 do
+define_render_process_for 9 do
   [:horizontal_line, :opposing_vertical_lines, :horizontal_line, :right_edge, :horizontal_line]
 end
 
