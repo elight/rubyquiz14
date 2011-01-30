@@ -5,51 +5,51 @@ require 'lcd'
 
 class LcdTest < MiniTest::Unit::TestCase
     ZERO_SIZE_1 = <<HERE
- - 
+ -
 | |
-   
+
 | |
- - 
+ -
 HERE
 
     ONE_SIZE_1 = <<HERE
-   
+
   |
-   
+
   |
-   
+
 HERE
 
     ZERO_SIZE_2 = <<HERE
- -- 
+ --
 |  |
 |  |
-    
+
 |  |
 |  |
- -- 
+ --
 HERE
 
     ZERO_SIZE_3 = <<HERE
- --- 
+ ---
 |   |
 |   |
 |   |
-     
+
 |   |
 |   |
 |   |
- --- 
+ ---
 HERE
 
     ONE_SIZE_2 = <<HERE
-    
+
    |
    |
-    
+
    |
    |
-    
+
 HERE
   
     NUMBERS_MAPPED_TO_SIZE_2_LCDS = {

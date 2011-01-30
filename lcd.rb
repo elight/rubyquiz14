@@ -33,7 +33,7 @@ class Lcdizer
     when 0
       render_zero
     when 1
-      puts ONE
+      render_one
     else
       # no-op
     end
@@ -49,7 +49,7 @@ class Lcdizer
   def render_zero
     print " "
     self.size.times { print "-" }
-    puts " " 
+    puts 
 
     self.size.times do
       print "|"
@@ -58,7 +58,6 @@ class Lcdizer
       puts
     end
 
-    (self.size + 2).times { print " " }
     puts
 
     self.size.times do
@@ -70,7 +69,25 @@ class Lcdizer
 
     print " "
     self.size.times { print "-" }
-    puts " " 
+    puts
+  end
+
+  def render_one
+    puts 
+
+    self.size.times do
+      (self.size + 1).times { print " " }
+      puts "|"
+    end
+
+    puts
+
+    self.size.times do
+      (self.size + 1).times { print " " }
+      puts "|"
+    end
+
+    puts
   end
 end
 
