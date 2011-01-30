@@ -36,7 +36,7 @@ class ZeroRenderer < NumberRenderer
 end
 
 class OneRenderer < NumberRenderer
-  def vertical_lines
+  def opposing_vertical_lines
     self.size.times do
       (self.size + 1).times { print " " }
       puts "|"
@@ -45,9 +45,9 @@ class OneRenderer < NumberRenderer
 
   def render
     puts 
-    vertical_lines
+    opposing_vertical_lines
     puts
-    vertical_lines
+    opposing_vertical_lines
     puts
   end
 end
@@ -61,24 +61,16 @@ class TwoRenderer < NumberRenderer
   end
 
   def left_edge
-    puts "|"
-  end
-
-  def vertical_edge_on_side(side_name = :left)
     self.size.times do
-      row = "|"
-      (self.size + 1).times { row << " " }
-      row.reverse! if side_name == :right
-      row.send(:rstrip!) if side_name == :left
-      puts row
+      puts "|"
     end
   end
-  
+
   def render
     horizontal_line
-    vertical_edge_on_side :right
+    right_edge
     horizontal_line
-    vertical_edge_on_side :left
+    left_edge
     horizontal_line
   end
 end
