@@ -18,9 +18,7 @@ class NumberRenderer
 
   def horizontal_line
     print " "
-    self.size.times do
-      print "-"
-    end
+    self.size.times { print "-" }
     puts
   end
 
@@ -28,8 +26,7 @@ class NumberRenderer
     self.size.times do
       print "|"
       self.size.times { print " " }
-      print "|"
-      puts
+      puts "|"
     end
   end
 
