@@ -1,3 +1,5 @@
 Lol!  We were so focused on scalable digits that we didn't even *think* about printing more than one digit!
 
-FAIL! ;-)
+After realizing this, and knowing that we have a 5 part process to render any given digit, I realized that I only needed to apply each step of the process on a line by line basis for each digit in a digit string.  Ok, that and capture the whole line before emitting it.
+
+There are probably more beautiful solutions.  However, this one seemed consistent with my previous single digit solution.  And returning an array of the symbols representing the steps in the process to render a single digit proved simlper than making a full-blown internal DSL out of it.
