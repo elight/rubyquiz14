@@ -82,18 +82,17 @@ class Lcdizer
     self.size = 2
   end
 
+  NUM_TO_NUM_NAME_MAP = { 
+    0 => "Zero",
+    1 => "One",
+    2 => "Two"
+  }
+
   def run
     parse_cmdline
-    case self.digit
-    when 0
-      ZeroRenderer.new(size).render
-    when 1
-      OneRenderer.new(size).render
-    when 2
-      TwoRenderer.new(size).render
-    else
-      # no-op
-    end
+    klass_name = "#{NUM_TO_NUM_NAME_MAP[self.digit]}Renderer"
+    klass = Module.const_get(klass_name)
+    klass.new(size).render
   end
 
   def parse_cmdline
@@ -105,5 +104,6 @@ class Lcdizer
 end
 
 at_exit do
-  Lcdizer.new.run
+  ARGV << "0" if ARGV.empty?
+  Lcdizer.new.run 
 end
