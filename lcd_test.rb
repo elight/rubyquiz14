@@ -19,6 +19,69 @@ HERE
   |
 
 HERE
+    TWO_SIZE_1 = <<HERE
+ -
+  |
+ -
+|
+ -
+HERE
+
+    THREE_SIZE_1 = <<HERE
+ -
+  |
+ -
+  |
+ -
+HERE
+
+    FOUR_SIZE_1 = <<HERE
+
+| |
+ -
+  |
+
+HERE
+
+    FIVE_SIZE_1 = <<HERE
+ -
+|
+ -
+  |
+ -
+HERE
+
+    SIX_SIZE_1 = <<HERE
+ -
+|
+ -
+| |
+ -
+HERE
+
+    SEVEN_SIZE_1 = <<HERE
+ -
+  |
+
+  |
+
+HERE
+
+    EIGHT_SIZE_1 = <<HERE
+ -
+| |
+ -
+| |
+ -
+HERE
+
+    NINE_SIZE_1 = <<HERE
+ -
+| |
+ -
+  |
+ -
+HERE
 
     ZERO_SIZE_2 = <<HERE
  --
@@ -79,7 +142,14 @@ HERE
   NUMBERS_MAPPED_TO_SIZE_1_LCDS = {
     0 => ZERO_SIZE_1,
     1 => ONE_SIZE_1,
-    2 => TWO_SIZE_1
+    2 => TWO_SIZE_1,
+    3 => THREE_SIZE_1,
+    4 => FOUR_SIZE_1,
+    5 => FIVE_SIZE_1,
+    6 => SIX_SIZE_1,
+    7 => SEVEN_SIZE_1,
+    8 => EIGHT_SIZE_1,
+    9 => NINE_SIZE_1
   }
 
   NUMBERS_MAPPED_TO_SIZE_2_LCDS.each do |number, size_2_lcd|
